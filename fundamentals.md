@@ -60,12 +60,53 @@ the second way to opening a URL in the scrpay shell is to construct a requests o
 - ```r = scrapy.Request(url="https://www.worldometers.info/world-population/population-by-country/")```
 - ```fetch(r)```
 - ```response.body```
+- a faster alternative is ```scrapy shell "https://www.worldometers.info/world-population/population-by-country/"```
 - you can also inspect the site via your browser
 - our spider sees the website without javascript. this is a common problem in scraping. the spider can't directly render 
 javascript. There is a tool called splash that helps us with that.
 
+## how to enable and disable javascript from a page (Firefox)
+- Enter ```about:config``` into the URL bar in Firefox
+- Select the blue ```Accept the Risk and Continue``` button.
+- Enter ```javascript.enabled``` into the search box at the top of the page.
+- Select the toggle to the right of ```javascript.enabled``` to change its value to false. 
+- JavaScript is now disabled in your Firefox browser. To re-enable it at any time, change the value of 
+```javascript.enabled``` to true.
+- test XPath in chrome vs firefox developer
+
+## how do enable and disable javascript in Chrome
+- ```ctrl-shift-i``` to open up development tools
+- ```crtl-shit-p``` to open up the command path
+- type in ```javascript```
+- select the second option
+- ```ctrl-r```
+
+
+
+
 ## XPath and CSS selectors (need to re-watch section 9 for this)
-- disable javascript
-- test XPath in chrome developer
-- need to learn how to use the same tools for firefox
-- 
+we're trying to scrape the title of worldometers. we want to scrape the title using xpath. Before scraping we need to follow these steps:
+- disable javascript, because scrapy will return the raw html without javascript, so we want to see the same raw html 
+markup in browser that scrapy will return. see above for instructions.
+- use the inspection tool to select the title, either by clicking on it or right clicking and selecting ```inspect```
+- we need to test our XPath expression first before implementing in scrapy. 
+- for that we click on the elements table and ```ctrl-f```, and a new search box will appear
+- type ```\\h1``` into the search box, and the element will be highlighted
+- we copy this xpath expression back to python
+- in the scrapy shell we enter ```title = response.xpath('//h1')```
+- if we only want the text, we need to make a slight change to the XPath expression: ```title = response.xpath('//h1/text()')```
+- now if we just want to return the title as a string we just type ```title.get()```
+
+we can do the same thing with css
+- ```title_css = response.css('h1::text')```
+- ```title_css```
+- note that scrapy automatically casts the return to XPath even when you use CSS selectors, so its recommended to use XPath
+- ```title_css.get()```
+
+## selecting countries
+- use the selection tool in chrome to select a country. 
+- we notice that ```//a``` returns all the information including all the script tags that are not related to the country, not just the country
+- we notice that ```//a``` is inside ```td``` so we can modify our expression to ```//td/a```
+- in the scrapy shell we can now create a variable called countries ```countries = response.xpath('//td/a')```
+- and to refine it further we can say ```countries = response.xpath('//td/a/text()').getall()```
+- and we get a list of all the countries.

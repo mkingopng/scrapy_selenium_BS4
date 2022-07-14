@@ -12,4 +12,11 @@ class CountriesSpider(scrapy.Spider):
         :param response:
         :return:
         """
-        pass
+        title = response.xpath("title = response.xpath('//h1')").get()
+        countries = response.xpath('//td/a/text()').getall()
+
+        yield {
+            'title': title,
+            'countries': countries
+        }
+

@@ -1,6 +1,17 @@
 # scrapy_selenium_BS4
-a collection of code, data and information for using scrapy, selenium, beautiful soup 4, splash and heroku, starting 
-with Udemy course "modern scraping in python scrapy and splash"
+a collection of code, data and information for using 
+- scrapy, 
+- selenium, 
+- beautiful soup 4, 
+- splash
+- heroku
+- https://www.scraperapi.com/
+- https://scrapeops.io/app/login
+
+starting with Udemy course "modern scraping in python scrapy and splash"
+
+## always start with the docs
+https://docs.scrapy.org/en/latest/
 
 ## modern web scraping in python using scrapy and splash (Udemy, taught by Ahmed Rafik)
 refer to course notes and code collection for more information. Once this course is completed, I'll move on to the next 
