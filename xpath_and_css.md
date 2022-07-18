@@ -19,4 +19,8 @@
 - this will be the default
 - **https://scrapinghub.github.io/xpath-playground/** is a really useful tool for testing xpath
 
-##
+## xpath selectors in theory
+
+mysql --user=root --password=peipei11
+
+CREATE DATABASE palm_olein;
