@@ -32,3 +32,5 @@ and continue to add information, code and resources on web scraping to this repo
 - scraping APIs
 - log in to websites
 - bypass cloudflare
+
+https://web.archive.org/web/20190225123327/https://www.tinydeal.com/specials.html
