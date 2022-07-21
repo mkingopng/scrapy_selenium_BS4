@@ -81,9 +81,6 @@ javascript. There is a tool called splash that helps us with that.
 - select the second option
 - ```ctrl-r```
 
-
-
-
 ## XPath and CSS selectors (need to re-watch section 9 for this)
 we're trying to scrape the title of worldometers. we want to scrape the title using xpath. Before scraping we need to follow these steps:
 - disable javascript, because scrapy will return the raw html without javascript, so we want to see the same raw html 

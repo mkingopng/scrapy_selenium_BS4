@@ -13,14 +13,14 @@
 - if we want to include its descendants, we can use: ```div.intro p, span#location``` or ```div.intro > p```
 - repetition is the mother of learning
 
-## CSS selectors in theory
+## 14) CSS selectors in theory
 
-## xpath 
+## 15) XPath fundamentals
 - this will be the default
 - **https://scrapinghub.github.io/xpath-playground/** is a really useful tool for testing xpath
 
-## xpath selectors in theory
+## 16) Navigating using XPath (Going UP)
 
-mysql --user=root --password=peipei11
+## 17) Navigating using XPath (Going DOWN)
 
-CREATE DATABASE palm_olein;
+## 18) XPath in theory
